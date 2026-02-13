@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Explorer API - Learn HTTP Concepts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            padding: 20px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .endpoints {
+            background: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .endpoint {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .method {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 10px;
+            color: white;
+        }
+        
+        .get { background: #61affe; }
+        .post { background: #49cc90; }
+        .put { background: #fca130; }
+        .delete { background: #f93e3e; }
+        
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .code pre {
+            margin: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin: 10px 5px;
+        }
+        
+        .btn:hover {
+            background: #764ba2;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 HTTP Explorer API</h1>
+            <p>Learn HTTP concepts through hands-on API exploration</p>
+        </header>
+        
+        <div class="main-content">
+            <h2>Welcome to HTTP Explorer!</h2>
+            <p>A production-grade RESTful API designed to help you understand HTTP concepts through practical examples.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>📚 CRUD Operations</h3>
+                    <p>Complete user management with GET, POST, PUT, PATCH, DELETE operations</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🎯 HTTP Headers</h3>
+                    <p>Explore headers, cookies, cache control, CORS, and content types</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🚦 Status Codes</h3>
+                    <p>Test all major HTTP status codes from 2xx to 5xx</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📤 File Upload</h3>
+                    <p>Single and multiple file uploads with validation</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🌊 Streaming</h3>
+                    <p>Server-Sent Events, chunked transfer, and real-time data</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🔒 Security</h3>
+                    <p>Helmet, CORS, rate limiting, and HTTPS support</p>
+                </div>
+            </div>
+            
+            <h2>Quick Start</h2>
+            <div class="code">
+                <pre>
+# Get all users
+curl http://localhost:5000/api/users
+
+# Create a user
+curl -X POST http://localhost:5000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"John","email":"john@example.com","role":"Developer"}'
+
+# Test status codes
+curl http://localhost:5000/api/status/404
+
+# Upload a file
+curl -X POST http://localhost:5000/api/upload/single \
+  -F "file=@image.jpg"
+                </pre>
+            </div>
+            
+            <h2>Key Endpoints</h2>
+            <div class="endpoints">
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <code>/api/users</code>
+                    <p>Retrieve all users with filtering support</p>
+                </div>
+                
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <code>/api/users</code>
+                    <p>Create a new user</p>
+                </div>
+                
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <code>/api/headers</code>
+                    <p>View all request headers</p>
+                </div>
+                
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <code>/api/status/:code</code>
+                    <p>Test specific HTTP status code</p>
+                </div>
+                
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <code>/api/upload/single</code>
+                    <p>Upload a single file</p>
+                </div>
+                
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <code>/api/stream/sse</code>
+                    <p>Server-Sent Events stream</p>
+                </div>
+            </div>
+            
+            <h2>Features You'll Learn</h2>
+            <ul style="padding-left: 20px; margin: 20px 0;">
+                <li>✅ HTTP methods and their idempotency</li>
+                <li>✅ Status codes and when to use them</li>
+                <li>✅ Request/response headers</li>
+                <li>✅ Content negotiation</li>
+                <li>✅ ETag caching and conditional requests</li>
+                <li>✅ Gzip compression</li>
+                <li>✅ File uploads with multipart/form-data</li>
+                <li>✅ Server-side streaming</li>
+                <li>✅ Rate limiting</li>
+                <li>✅ CORS configuration</li>
+                <li>✅ Security headers</li>
+            </ul>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="/health" class="btn">Health Check</a>
+                <a href="https://github.com" class="btn">View on GitHub</a>
+                <a href="/api/users" class="btn">Try API</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Built with ❤️ by Vedant | Production-Ready HTTP Learning API</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Perfect for backend developers learning HTTP concepts</p>
+        </footer>
+    </div>
+</body>
+</html>

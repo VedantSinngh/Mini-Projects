@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Vedant Singh",
+    "email": "vedant@example.com",
+    "role": "Backend Developer",
+    "active": true,
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Ayush Singh",
+    "email": "ayusg@example.com",
+    "role": "Frontend Developer",
+    "active": true,
+    "createdAt": "2024-01-20T14:20:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Gopu",
+    "email": "gopu@example.com",
+    "role": "DevOps Engineer",
+    "active": false,
+    "createdAt": "2024-02-01T09:15:00Z"
+  }
+]
