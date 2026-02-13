@@ -1,0 +1,11 @@
+# Ignore build artifacts
+*.exe
+*.log
+
+# Ignore temporary files
+temp/
+*.tmp
+
+# Ignore specific files
+secret.txt
+draft.md
